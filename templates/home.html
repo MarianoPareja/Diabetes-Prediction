@@ -1,1 +1,79 @@
-<h1>Testing Home Page</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ML API</title>
+  </head>
+
+  <body>
+    <div class="login">
+      <h1>Diabetes Prediction</h1>
+
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post">
+        <input
+          type="text"
+          name="Age"
+          placeholder="Age"
+          required="required"
+        /><br />
+        <input
+          type="text"
+          name="Sex"
+          placeholder="Sex"
+          required="required"
+        /><br />
+        <input
+          type="text"
+          name="BMI"
+          placeholder="BMI"
+          required="required"
+        /><br />
+        <input
+          type="text"
+          name="BP"
+          placeholder="BP"
+          required="required"
+        /><br />
+        <input
+          type="text"
+          name="S1"
+          placeholder="S1"
+          required="required"
+        /><br />
+        <input
+          type="text"
+          name="S2"
+          placeholder="S2"
+          required="required"
+        /><br />
+        <input
+          type="text"
+          name="S3"
+          placeholder="S3"
+          required="required"
+        /><br />
+        <input
+          type="text"
+          name="S4"
+          placeholder="S4"
+          required="required"
+        /><br />
+        <input
+          type="text"
+          name="S5"
+          placeholder="S5"
+          required="required"
+        /><br />
+        <input
+          type="text"
+          name="S6"
+          placeholder="S6"
+          required="required"
+        /><br />
+        <button type="submit" class="button">Predict</button>
+      </form>
+    </div>
+    {{prediction_text}}
+  </body>
+</html>
