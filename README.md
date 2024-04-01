@@ -1,8 +1,21 @@
-### Diabetes Progression Prediction
+# Diabetes Progression Prediction
 
-### Software and Tools Requirements
+ML Model to detect diabetes cases, trained was done using Scikit-learn Diabetes Dataset.
 
-1. [Github Account](https://github.com)
-2. [VS Code IDE](https://code.visualstudio.com)
-3. [Heroku Account](https://heroku.com)
-4. [Git CLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
+### Set Up
+
+To create a Heroku accont go to the following page [Heroku Page](https://heroku.com)
+
+1. Create an account
+2. Create a new project
+3. Configure the following Github Secrets
+
+### Github Secrets
+
+```
+HEROKU_EMAIL: Email associated with Heroku account
+HEROKU_API_KEY: API Key of Heroku account
+HEROKU_APP_NAME: Project name
+```
+
+4. Configure Heroku Project

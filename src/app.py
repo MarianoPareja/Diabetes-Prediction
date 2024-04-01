@@ -1,7 +1,8 @@
 import pickle
-from flask import Flask, request, app, jsonify, url_for, render_template
+
 import numpy as np
 import pandas as pd
+from flask import Flask, app, jsonify, render_template, request, url_for
 
 app = Flask(__name__)
 
@@ -34,7 +35,7 @@ def predict():
     print(final_input)
     output = model.predict(final_input)[0]
 
-    return render_template("home.html", prediction_text="The diabetes progression is {}".format(output))
+    return render_template("./templates/home.html", prediction_text="The diabetes progression is {}".format(output))
 
 
 if __name__ == "__main__":
