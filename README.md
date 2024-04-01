@@ -18,4 +18,4 @@ HEROKU_API_KEY: API Key of Heroku account
 HEROKU_APP_NAME: Project name
 ```
 
-4. Configure Heroku Project
+4. In Heroku got to -> Deploy, then chose your Github Repo and deploy the main branch
