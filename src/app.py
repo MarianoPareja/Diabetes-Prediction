@@ -1,19 +1,25 @@
+import os
 import pickle
 
 import numpy as np
 import pandas as pd
 from flask import Flask, app, jsonify, render_template, request, url_for
 
-app = Flask(__name__)
+BASE_DIR = os.path.dirname(os.getcwd())
+TEMPLATES_DIR = os.path.join(os.getcwd(),'templates')
+
+app = Flask(__name__, template_folder=TEMPLATES_DIR)
+
+
 
 # Load the model
-model = pickle.load(open("./regmodel.pkl", 'rb'))
-scaler = pickle.load(open("./scaling.pkl", 'rb'))
+model = pickle.load(open(os.path.join(BASE_DIR,'models','regmodel.pkl'), 'rb'))
+scaler = pickle.load(open(os.path.join(BASE_DIR,'models','scaling.pkl'), 'rb'))
 
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('/home.html')
 
 
 @app.route('/predict_api', methods=['POST'])
@@ -35,7 +41,7 @@ def predict():
     print(final_input)
     output = model.predict(final_input)[0]
 
-    return render_template("./templates/home.html", prediction_text="The diabetes progression is {}".format(output))
+    return render_template("/home.html", prediction_text="The diabetes progression is {}".format(output))
 
 
 if __name__ == "__main__":
